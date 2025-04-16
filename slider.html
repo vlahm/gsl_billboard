@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Great Salt Lake Water Level</title>
+    <style>
+      :root {
+        --level: 37.7%;
+      }
+
+      .water-level-container {
+        background-color: #000;
+        color: #fff;
+        padding: 20px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: fit-content;
+        box-sizing: border-box;
+      }
+
+      .water-level-header {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+      .water-level-header h3 {
+        margin: 0;
+      }
+
+      .date-pill {
+        background-color: #fff;
+        color: #000;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 0.8em;
+      }
+
+      .indicator-bar-container {
+        width: 100%;
+        max-width: 600px;
+        height: 40px;
+        background-color: #333;
+        border-radius: 5px;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 10px;
+        display: flex;
+      }
+
+      .indicator-bar {
+        height: 100%;
+        border-radius: 5px;
+        background-image: linear-gradient(
+          to right,
+          #ff0000 30%,
+          #ffcc00 60%,
+          #ccff00 70%,
+          #00ffcc 80%,
+          #00ccff
+        );
+        /* Adjust width based on the percentage */
+        width: 100%;
+      }
+
+      .indicator-labels {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 600px;
+        font-size: 0.8em;
+        text-transform: uppercase;
+        color: #ccc;
+        margin-bottom: 5px;
+      }
+
+      .percentage-bubble {
+        position: absolute;
+        left: calc(var(--level) - 20px); /* Adjust positioning based on width */
+        top: 5px;
+        background-color: #fff;
+        color: #000;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 0.9em;
+        white-space: nowrap;
+        transform: translateX(-50%);
+      }
+
+      .website-link {
+        font-size: 0.9em;
+        color: #00ccff;
+        text-decoration: none;
+      }
+    </style>
+    <script src="slider.js"></script>
+  </head>
+  <body>
+    <!-- If you can easily get the script file loaded into wordpress...then you can just do the following to add the widget -->
+    <!-- Once you get the javascript hooked up in the component you can remove the percentage and date from here...will stop the jank on loading -->
+    <!--<critical-slider percentage="37.7" date="Feb. 12"
+      ><h3 slot="title">Great Salt Lake Water Level</h3>
+      <a
+        href="https://GrowTheFlowUtah.org"
+        class="website-link"
+        target="_blank"
+        slot="link"
+        >GrowTheFlowUtah.org</a
+      >
+    </critical-slider>-->
+
+    <!-- ...or you can take the styles above and the HTML below and add it directly. -->
+
+    <div class="water-level-container">
+      <div class="water-level-header">
+        <h3>Great Salt Lake Water Level</h3>
+        <span class="date-pill"></span>
+      </div>
+      <div class="indicator-labels">
+        <span>Collapse</span>
+        <span>Critical</span>
+        <span>Healthy</span>
+      </div>
+      <div class="indicator-bar-container">
+        <div class="indicator-bar"></div>
+        <div class="percentage-bubble"></div>
+      </div>
+      <a href="https://GrowTheFlowUtah.org" class="website-link" target="_blank"
+        >GrowTheFlowUtah.org</a
+      >
+    </div>
+  </body>
+</html>
