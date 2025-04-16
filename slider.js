@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
       // Update date pill
       const datePill = document.querySelector('.date-pill');
       datePill.textContent = lvl_date;
-      debugger;
     })
     .catch(error => {
       console.error('Failed to fetch or apply data:', error);
