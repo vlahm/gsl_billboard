@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(data => {
       //const { sqmi_exposed_alt, salin_record_date } = data;
 
-      const lvl = data[0]['level_pct'];
+      const lvl = data[0]['pct_volume_raw'];
       const lvl_date = data[0]['level_date'];
 
       // Update percentage bubble and position
