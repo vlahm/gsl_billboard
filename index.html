@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet'>
     <title>Great Salt Lake Water Level</title>
     <style>
       :root {
@@ -10,12 +11,12 @@
       }
 
       html, body {
-        margin: 0;
+        margin: 0 auto;
         padding: 0;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: fit-content;
+        /*width: fit-content; */
         height: fit-content;
       }
 
@@ -37,9 +38,12 @@
         display: flex;
         gap: 20px;
         align-items: center;
+        font-family: Anton
       }
       .water-level-header h3 {
         margin: 0;
+        font-family: Anton;
+        letter-spacing: 2px;
       }
 
       .date-pill {
@@ -48,6 +52,7 @@
         padding: 5px 10px;
         border-radius: 5px;
         font-size: 0.8em;
+        font-family: Arial;
       }
 
       .indicator-bar-container {
@@ -67,11 +72,12 @@
         border-radius: 5px;
         background-image: linear-gradient(
           to right,
-          #ff0000 30%,
-          #ffcc00 60%,
-          #ccff00 70%,
-          #00ffcc 80%,
-          #00ccff
+          #920202 15%,
+          #ef0505 30%,
+          #e18813 50%,
+          #ffef17 70%,
+          #25b6b2 85%,
+          #077bb4
         );
         /* Adjust width based on the percentage */
         width: 100%;
@@ -86,6 +92,7 @@
         text-transform: uppercase;
         color: #ccc;
         margin-bottom: 5px;
+        font-family: Arial;
       }
 
       .percentage-bubble {
@@ -99,12 +106,18 @@
         font-size: 0.9em;
         white-space: nowrap;
         transform: translateX(-50%);
+        font-family: Arial;
+        border: 1px solid black;
+        border-radius: 5px;
       }
 
       .website-link {
         font-size: 0.9em;
-        color: #00ccff;
+        font-family: Arial;
+        color: white;
         text-decoration: none;
+        display: flex;
+        align-items: center;
       }
     </style>
     <script src="slider.js"></script>
@@ -131,16 +144,16 @@
         <span class="date-pill"></span>
       </div>
       <div class="indicator-labels">
-        <span>Collapse</span>
-        <span>Critical</span>
-        <span>Healthy</span>
+        <span style = "color: #ed2727">Collapse</span>
+        <span style = "color: #ff8210">Critical</span>
+        <span style = "color: #588fcf">Healthy</span>
       </div>
       <div class="indicator-bar-container">
         <div class="indicator-bar"></div>
         <div class="percentage-bubble"></div>
       </div>
       <a href="https://GrowTheFlowUtah.org" class="website-link" target="_blank"
-        >GrowTheFlowUtah.org</a
+        >Learn More | GrowTheFlowUtah.org <img src="https://growtheflowutah.org/wp-content/uploads/2025/04/Logo-scaled.png" alt="GTF Logo" style="width:30px;height:28px;"></a
       >
     </div>
   </body>
